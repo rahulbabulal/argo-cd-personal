@@ -4,7 +4,7 @@ metadata:
   name: gcr-hello-v1-ui
 spec:
   ports:
-  - port: 9001
+  - port: 80
     targetPort: 8080
   selector:
     app: gcr-hello-v1-ui

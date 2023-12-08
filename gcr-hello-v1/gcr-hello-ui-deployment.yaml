@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gcr-hello-v1-ui
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: gcr-hello-v1-ui
+  template:
+    metadata:
+      labels:
+        app: gcr-hello-v1-ui
+    spec:
+      containers:
+      - image: gcr.io/google-samples/hello-app:1.0
+        name: gcr-hello-v1-ui
+        ports:
+        - containerPort: 8080
